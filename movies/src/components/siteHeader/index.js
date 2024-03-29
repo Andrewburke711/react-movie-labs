@@ -7,10 +7,11 @@ import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import logo from '../../images/abmovielogo.png';
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
@@ -26,12 +27,13 @@ const SiteHeader = ({ history }) => {
   const menuOptions = [
     { label: "Home", path: "/" },
     { label: "Favorites", path: "/movies/favorites" },
-    { label: "Option 3", path: "/" },
-    { label: "Option 4", path: "/" },
-  ];
+    { label: "Recommendations", path: "/recommendations/:id" },
+    { label: "Top Rated", path: "/movies/top_rated" },
+    { label: "Actors", path: "/actors" },
+  ];  
 
   const handleMenuSelect = (pageURL) => {
-    navigate(pageURL, { replace: true });
+    navigate(pageURL.replace(":id", "someMovieId"), { replace: true });
   };
 
   const handleMenu = (event) => {
@@ -40,13 +42,17 @@ const SiteHeader = ({ history }) => {
 
   return (
     <>
-      <AppBar position="fixed" color="secondary">
+       <AppBar 
+        position="fixed" 
+        style={{ backgroundColor: '#1976d2' }}
+      >
+        
         <Toolbar>
-          <Typography variant="h4" sx={{ flexGrow: 1 }}>
-            TMDB Client
-          </Typography>
+        <Link to="/">
+          <img src={logo} alt="AB Movies App Logo" style={{ maxHeight: '120px', maxWidth: '200px', marginRight: '20px' }} /> 
+        </Link>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            All you ever wanted to know about Movies!
+            THE HOME OF MOVIES!
           </Typography>
             {isMobile ? (
               <>
