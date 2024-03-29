@@ -18,6 +18,8 @@ import ActorsPage from './pages/ActorsPage';
 import ActorDetailsPage from './pages/ActorDetailsPage';
 import FamousActorsPage from "./pages/FamousActorsPage";
 
+
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
