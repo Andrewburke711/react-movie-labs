@@ -44,7 +44,7 @@ const SiteHeader = ({ history }) => {
     <>
        <AppBar 
         position="fixed" 
-        style={{ backgroundColor: '#1976d2' }}
+        style={{ backgroundColor: '#1976d2'}}
       >
         
         <Toolbar>

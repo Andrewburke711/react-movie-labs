@@ -14,7 +14,6 @@ import RecommendationsPage from "./pages/recommendationsPage";
 import TopRated from "./pages/topRatedPage";
 import { auth } from './firebase-config';
 import LoginPage from './pages/LoginPage';
-import ActorsPage from './pages/ActorsPage';
 import ActorDetailsPage from './pages/ActorDetailsPage';
 import FamousActorsPage from "./pages/FamousActorsPage";
 
